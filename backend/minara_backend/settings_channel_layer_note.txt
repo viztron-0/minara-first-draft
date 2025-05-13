@@ -1,0 +1,17 @@
+# For development, using InMemoryChannelLayer to avoid Redis dependency for now.
+# In settings.py, the RedisChannelLayer is configured but commented out as an alternative.
+# If Redis is not available or desired for local dev, uncomment the InMemoryChannelLayer.
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+
+# The rest of the settings.py content remains the same.
+# This snippet is to show the change for InMemoryChannelLayer for easier local development if Redis isn't set up.
+# The actual settings.py was already updated to include the Redis config, which is preferred if Redis is available.
+# For now, I will proceed assuming Redis is the target for CHANNEL_LAYERS as per the last settings.py update.
+# If issues arise with Redis connection during development, I will switch to InMemoryChannelLayer.
+
+print("Updated settings.py to use InMemoryChannelLayer for Channels during initial development if Redis is unavailable. Will attempt Redis first as configured.")
+
